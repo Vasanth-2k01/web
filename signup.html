@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<body>
+    <form id="form">
+        <label>Username :</label>   <input type="text"   id="username"  name="username" placeholder="Username" required><br><br> 
+        <label>Password :</label>   <input type="text"   id="pwd"  name="pwd" placeholder="Password" required><br><br>
+        <input type="submit" id="submit">
+    </form>
+
+    <script>
+        const uname = document.getElementById('username').value;
+        const pwd = document.getElementById('pwd').value;
+        const form = document.getElementById('form');
+
+        form.addEventListener("submit",e=>{
+            e.preventDefault();
+            if(uname == "" || pwd == ""){
+                alert("Enter Valid Inputs");
+            }else if(uname.length < 4 || pwd.length < 4){
+                alert("UserName and Password should be more than 4 characters");
+            }else if(uname.length > 20 || pwd.length > 20){
+                alert("UserName and Password should be less than 20 characters");
+            }else{
+                alert("Logged in Successfully");
+            }
+        })
+        
+    </script>
+</body>
+</html>
